@@ -1,0 +1,15 @@
+5. No Quicksort, a pior escolha para pivô é:*
+a) O extremo de uma lista já ordenada
+b) O elemento inicial da lista não ordenada
+c) O menor elemento da lista não ordenada
+d) O elemento que esteja no "meio" da lista já ordenada
+
+Justifique sua resposta:
+
+
+Resposta: O extremo de uma lista já ordenada
+A justificativa é que, nesse caso, no fim do particionamento as sub-listas (ou sub-arranjos) podem ter
+tamanhos diferentes (ou seja, desbalanceados), o que acaba fazendo com que a ordenação
+recursiva de uma sub-lista leve mais tempo que a da outra
+
+fonte: pdf da aula e http://desenvolvendosoftware.com.br/algoritmos/ordenacao/quicksort.html#pior-caso

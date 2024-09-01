@@ -1,0 +1,11 @@
+7. O pivô recomendado para método quicksort é:
+A) O primeiro elemento
+B) O último elemento
+C) O elemento central
+D) Qualquer elemento
+
+
+Resposta: C - o elemento central
+
+acredito que seja essa a resposta pois colocando o elemento central como pivô tem menos chances
+de acontecer desbalanceamentos 

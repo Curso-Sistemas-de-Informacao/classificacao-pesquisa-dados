@@ -1,0 +1,55 @@
+8. Suponha que você tenha a seguinte lista para realizar ordenação: [19, 1, 9, 7, 3, 10, 13,
+15, 8, 12]. Qual opção representa a lista parcialmente ordenada após três passos
+completos de bubblesort?
+a)[1, 9, 19, 7, 3, 10, 13, 15, 8, 12]
+b)[1, 3, 7, 9, 10, 8, 12, 13, 15, 19]
+c)[1, 7, 3, 9, 10, 13, 8, 12, 15, 19]
+d)[1, 9, 19, 7, 3, 10, 13, 15, 8, 12]
+e) [1, 3, 7, 9, 8, 10, 12, 13, 15, 19]
+Nenhuma das alternativas
+
+Justifique sua resposta:
+
+
+Resposta é A: [1, 9, 19, 7, 3, 10, 13, 15, 8, 12]
+
+
+justificativa:
+
+na primeira rodada:
+j = 0
+i = 1
+lista[i] é 1 e lista[j] é 19
+
+
+ele verifica se 1 é menor do que 19, nesse caso é, então ele faz a troca de posições, utilizando uma
+variável auxiliar
+
+lista ficou assim agora:
+[1, 19, 9, 7, 3, 10, 13, 15, 8, 12]
+
+-------------
+
+na segunda rodada:
+
+j = 1
+i = 2
+
+lista[i] é 9 e lista[j] é 19
+nesse casso, 9 é menor do que 19, ocorrendo a troca de posições
+
+lista agora:
+
+[1, 9, 19, 7, 3, 10, 13, 15, 8, 12]
+
+----------------
+
+na terceira rodada:
+
+j = 2
+i = 3
+
+lista[i] é 7 e lista[j] é 19
+nesse caso, 7 é menor do que 19, então ocorre a troca de posições, deixando a lista assim:
+[1, 9, 19, 7, 3, 10, 13, 15, 8, 12]
+
