@@ -33,6 +33,6 @@ class PsstoreSpider(scrapy.Spider):
                 if jogos_precos_formatados[j][1] > jogos_precos_formatados[j+1][1]:
                      temp = jogos_precos_formatados[j] 
                      jogos_precos_formatados[j] = jogos_precos_formatados[j + 1] 
-                      
+                     jogos_precos_formatados[j + 1] = temp  
 
         return jogos_precos_formatados
