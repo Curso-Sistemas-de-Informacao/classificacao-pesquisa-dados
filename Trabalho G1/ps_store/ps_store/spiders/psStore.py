@@ -31,6 +31,8 @@ class PsstoreSpider(scrapy.Spider):
         for i in range(tamanho):
             for j in range(0, tamanho-i-1):
                 if jogos_precos_formatados[j][1] > jogos_precos_formatados[j+1][1]:
-                    jogos_precos_formatados[j], jogos_precos_formatados[j+1] = jogos_precos_formatados[j+1], jogos_precos_formatados[j]
+                        temp = jogos_precos_formatados[j]  
+                        jogos_precos_formatados[j] = jogos_precos_formatados[j + 1]  
+                        jogos_precos_formatados[j + 1] = temp  
 
         return jogos_precos_formatados
