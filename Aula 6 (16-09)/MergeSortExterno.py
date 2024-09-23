@@ -34,22 +34,17 @@ def mesclar_arquivos(arquivos, arquivo_saida):
             if linha:
                 heapq.heappush(heap, (linha, i))
     
-    # Fecha os arquivos temporários
     for arquivo in arquivos_abertos:
         arquivo.close()
 
 def external_merge_sort(arquivo, arquivo_saida):
-    # Divide o arquivo em blocos menores e ordena cada bloco
     arquivos_temporarios = dividir_arquivo(arquivo, BLOCOS_TAMANHO)
     
-    # Mescla os blocos temporários em um único arquivo de saída
     mesclar_arquivos(arquivos_temporarios, arquivo_saida)
-    
-    # Remove os arquivos temporários
+
     for arquivo_temp in arquivos_temporarios:
         os.remove(arquivo_temp)
 
-# Exemplo de uso
 arquivo_entrada = 'teste.txt'
 arquivo_saida = 'arquivo_teste_ordenado.txt'
 external_merge_sort(arquivo_entrada, arquivo_saida)
