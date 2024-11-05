@@ -1,10 +1,12 @@
 
-def busca_iterativa(lista, chave):
+
+def pesquisa_interpolation(lista, chave):
     inicio = 0
     fim = len(lista) - 1
-    
+    n = len(lista)
+
     while inicio <= fim:
-        meio = (inicio + fim) // 2
+        meio = inicio + int((fim - inicio) * (chave - lista[inicio]) / (lista[fim] - lista[inicio]))
 
         if lista[meio] < chave:
             inicio = meio + 1
@@ -19,7 +21,8 @@ def busca_iterativa(lista, chave):
     print("Não achou a chave")
 
 
-lista = [0, 1, 2, 4, 5, 6, 7, 8, 9]
+
+lista = [2, 4, 6, 8, 10, 12, 14, 16]
 chave = 4
 
-busca_iterativa(lista, chave)
+
