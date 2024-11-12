@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, valor, nome, descricao, preco):
-        self.valor = valor
+    def __init__(self, id, nome, descricao, preco):
+        self.id = id
         self.esquerda = None
         self.direita = None
         self.nome = nome
@@ -12,34 +12,34 @@ class arvore_binaria:
     def __init__(self):
         self.raiz = None
 
-    def insert(self, valor, nome, descricao, preco):
+    def insert(self, id, nome, descricao, preco):
         if self.raiz is None:
-            self.raiz = Node(valor, nome, descricao, preco)
+            self.raiz = Node(id, nome, descricao, preco)
         else:
             atual = self.raiz
             while True:
-                if valor < atual.valor:
+                if id < atual.id:
                     if atual.esquerda is None:
-                        atual.esquerda = Node(valor, nome, descricao, preco)
+                        atual.esquerda = Node(id, nome, descricao, preco)
                         break
                     atual = atual.esquerda
                 else:
                     if atual.direita is None:
-                        atual.direita = Node(valor, nome, descricao, preco)
+                        atual.direita = Node(id, nome, descricao, preco)
                         break
                     atual = atual.direita
 
-    def remove(self, valor):
-        self.raiz = self._remove(self.raiz, valor)
+    def remove(self, id):
+        self.raiz = self._remove(self.raiz, id)
 
-    def _remove(self, node, valor):
+    def _remove(self, node, id):
         if node is None:
             return node
 
-        if valor < node.valor:
-            node.esquerda = self._remove(node.esquerda, valor)
-        elif valor > node.valor:
-            node.direita = self._remove(node.direita, valor)
+        if id < node.id:
+            node.esquerda = self._remove(node.esquerda, id)
+        elif id > node.id:
+            node.direita = self._remove(node.direita, id)
         else:
             if node.esquerda is None:
                 return node.direita
@@ -49,17 +49,17 @@ class arvore_binaria:
             temp = node.esquerda
             while temp.direita:
                 temp = temp.direita
-            node.valor = temp.valor
-            node.esquerda = self._remove(node.esquerda, temp.valor)
+            node.id = temp.id
+            node.esquerda = self._remove(node.esquerda, temp.id)
         
         return node
     
-    def search(self, valor):
+    def search(self, id):
         atual = self.raiz
         while atual:
-            if valor == atual.valor:
+            if id == atual.id:
                 return atual
-            elif valor < atual.valor:
+            elif id < atual.id:
                 atual = atual.esquerda
             else:
                 atual = atual.direita
@@ -68,7 +68,7 @@ class arvore_binaria:
     def ordem_simetrica(self, node):
         if node:
             self.ordem_simetrica(node.esquerda)
-            print(f"Valor: {node.valor}, Nome: {node.nome}, Descrição: {node.descricao}, Preço: {node.preco}")
+            print(f"id: {node.id}, Nome: {node.nome}, Descrição: {node.descricao}, Preço: {node.preco}")
             self.ordem_simetrica(node.direita)
 
 
